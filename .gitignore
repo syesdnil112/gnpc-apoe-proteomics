@@ -1,0 +1,96 @@
+###############################
+# R / RStudio
+###############################
+.Rhistory
+.RData
+.Rproj.user/
+.Ruserdata
+*.Rproj
+
+###############################
+# R package management (renv)
+###############################
+renv/library/
+renv/staging/
+renv/.gitignore
+
+###############################
+# Raw GNPC / Somalogic Data
+###############################
+# IGNORE ALL RAW DATA FILES
+data/raw/
+data/interim/
+data/processed/
+
+# Specifically ignore Somalogic anonymized files
+Somalogic*V1_anonymized.csv
+Somalogic*_anonymized.csv
+*Somalogic*        # failsafe
+
+# Ignore common large data formats
+*.csv
+*.tsv
+*.txt
+*.xlsx
+*.xls
+*.feather
+*.parquet
+*.fst
+*.h5
+*.hdf5
+*.h5ad
+*.mtx
+
+# Keep small example datasets if you ever create them:
+!data/example/*
+!example_data/*
+# (these will still be tracked if they exist)
+
+###############################
+# R Data Objects
+###############################
+*.rds
+*.Rds
+*.RData
+*.rdata
+
+###############################
+# Logs, temp files, caches
+###############################
+logs/
+*.log
+*.tmp
+*_cache/
+cache/
+*.utf8.md
+*.knit.md
+
+###############################
+# Compiled/Rendered Output
+###############################
+*.html
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.tiff
+*.svg
+
+# Keep figures you WANT to track:
+!results/figures/
+
+###############################
+# Quarto / RMarkdown output
+###############################
+*_files/
+*.qmd
+*.md
+
+###############################
+# Misc OS cruft
+###############################
+.DS_Store
+Thumbs.db
+.Rproj.user
+.httr-oauth
+.quarto
