@@ -79,7 +79,7 @@ message("Saved: ", outf)
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(limma); library(ggplot2) })
 have_EV <- requireNamespace("EnhancedVolcano", quietly = TRUE)
 
-# Reload the 5B dataset (ensures 'dat' is present even in a fresh session)
+# Reload the 5B dataset 
 dat <- readr::read_csv(file.path(out_dir, "05B_AD_female_APOE_log2.csv"), show_col_types = FALSE)
 
 # Build expression matrix X (rows=features = SOMAmer, cols=samples) from *this* dataset

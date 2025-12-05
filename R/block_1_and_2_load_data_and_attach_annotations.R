@@ -109,7 +109,6 @@ anno_present <- analyte_info %>%
 
 kept_ids <- unique(anno_present$column_name)
 message("Analytes kept after annotation filtering: ", length(kept_ids)) 
-#7289 analytes kept after annotation filtering
 
 # IMPORTANT: keep expression columns as SOMAmer IDs (column_name). Do NOT rename here.
 expr_mat <- merged %>% select(all_of(meta_cols), all_of(kept_ids))

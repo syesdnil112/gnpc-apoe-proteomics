@@ -43,7 +43,7 @@ stopifnot("ad"  %in% names(ph), "sex" %in% names(ph))
 apoe_col <- names(ph)[grepl("apoe", names(ph), ignore.case = TRUE)][1]
 stopifnot(length(apoe_col) == 1)
 
-# MMSE column (prefer mmse; fallback “cognitive_test_score” or “moca” if needed)
+# MMSE column 
 mmse_col <- if ("mmse" %in% names(ph)) "mmse" else if ("cognitive_test_score" %in% names(ph)) "cognitive_test_score" else if ("moca" %in% names(ph)) "moca" else NA_character_
 
 # Merge & filter: AD females, MMSE<24, APOE groups (exclude any E2)

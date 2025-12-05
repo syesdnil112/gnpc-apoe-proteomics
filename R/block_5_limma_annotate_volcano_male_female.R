@@ -13,8 +13,8 @@ stopifnot(file.exists(qc_path), file.exists(pheno_path))
 sample_id_col_user <- "sample_id"
 ad_col_user        <- "ad"
 sex_col_user       <- "sex"
-apoe_col_user      <- "apoe"                    # set your APOE col
-mmse_col_user      <- "cognitive_test_score"    # per your data
+apoe_col_user      <- "apoe"                    
+mmse_col_user      <- "cognitive_test_score"   
 pd_col_user        <- "pd"
 ftd_col_user       <- "ftd"
 als_col_user       <- "als"

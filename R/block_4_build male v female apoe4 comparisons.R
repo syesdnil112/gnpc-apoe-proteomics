@@ -1,17 +1,17 @@
 # scripts/05_AD_APOE4_no24_MvF_dataset.R
 # Purpose: AD (==1), MMSE<24, APOE ε4 carriers (exclude 2/4), pd==0 & ftd==0 & als==0
-#          Compare Male vs Female. Column names are USER-SET (no guessing).
+#          Compare Male vs Female. 
 
 suppressPackageStartupMessages({ library(dplyr); library(readr); library(stringr) })
 if (!exists("out_dir")) out_dir <- "qc_outputs"
 
 # ------------------------ USER INPUTS (edit these) ------------------------
-# Provide the *exact* column names as they appear in your CSVs.
+# Provide the exact column names as they appear in CSVs.
 sample_id_col_user <- "sample_id"
 ad_col_user        <- "ad"
 sex_col_user       <- "sex"
-apoe_col_user      <- "apoe"                  # <- set this to your APOE column
-mmse_col_user      <- "cognitive_test_score"  # <- you stated this explicitly
+apoe_col_user      <- "apoe"                  
+mmse_col_user      <- "cognitive_test_score" 
 pd_col_user        <- "pd"
 ftd_col_user       <- "ftd"
 als_col_user       <- "als"
@@ -59,12 +59,12 @@ pd_col        <- norm_name(pd_col_user)
 ftd_col       <- norm_name(ftd_col_user)
 als_col       <- norm_name(als_col_user)
 
-# Validate presence (fail fast, no guessing)
+# Validate presence 
 needed <- c(sample_id_col, ad_col, sex_col, apoe_col, mmse_col, pd_col, ftd_col, als_col)
 missing <- setdiff(needed, names(ph))
 if (length(missing)) stop("Missing phenotype columns: ", paste(missing, collapse = ", "))
 
-# Ensure sample_id exists in zs or discover a compatible one (no guessing beyond exact match)
+# Ensure sample_id exists in zs or discover a compatible one
 if (!sample_id_col %in% names(zs)) {
   stop("Expression table is missing '", sample_id_col, "'. Provide the correct sample ID column name.")
 }
